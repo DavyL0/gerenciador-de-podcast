@@ -12,7 +12,7 @@ export const repositoryPodcast = async (podcastName?:string ): Promise<Podcast[]
 
 
     if(podcastName){
-        jsonFile = jsonFile.filter((podcast) => podcast.podcastName === podcastName)
+        jsonFile = jsonFile.filter((podcast: { podcastName: string; }) => podcast.podcastName === podcastName)
     }
     return jsonFile;
 }
